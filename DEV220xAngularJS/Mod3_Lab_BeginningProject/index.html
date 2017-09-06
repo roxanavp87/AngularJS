@@ -17,8 +17,11 @@
         <div ng-hide="model.search">
             Enter the search criteria above.
         </div>
-        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
+        <div ng-show="model.search" ng-repeat="t in (model.filteredToppings = (model.availableToppings | filter:model.search))">
             <span ng-click="addTopping(t)">{{t}}</span>
+        </div>
+        <div ng-if="model.filteredToppings.length ==0" class="alert alert-danger" role="alert">
+            No results.
         </div>
         <div class="alert alert-success" role="alert" ng-show="model.success">
             Topping added.
