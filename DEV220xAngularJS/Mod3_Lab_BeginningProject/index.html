@@ -20,8 +20,12 @@
         <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
             <span ng-click="addTopping(t)">{{t}}</span>
         </div>
+        <div class="alert alert-success" role="alert" ng-show="model.success">
+            Topping added.
+            <button ng-click="closeSuccessAlert()">Close</button>
+        </div>
 
-        <h3>Selected Toppings</h3>
+        <h3 ng-show="model.toppings.length">Selected Toppings</h3>
         <div ng-repeat="t in model.toppings">
             {{t}}
         </div>
