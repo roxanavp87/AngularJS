@@ -29,7 +29,7 @@
 
         <div>
             <h3>Selected item is:</h3>
-            <pre>{{model.mainDish}}</pre>
+            <pre>{{model.mainDish.name}}</pre>
         </div>
         <div>
             <h3>Special instructions</h3>
@@ -38,7 +38,7 @@
         </div>
         <div>
             <h3>Order Summary</h3>
-            <pre>{{model.mainDish}} - {{model.specialInstructions}}</pre>
+            <pre>{{model.mainDish.name}} ${{model.mainDish.price}} - {{model.specialInstructions}}</pre>
         </div>
 
     </div>
